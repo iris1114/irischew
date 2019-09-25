@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+</head>
+<body>
+
+	<div id="app">
+		<h3>Rainbow</h3>
+		<ul>
+			<li v-for="color in colors">
+				{{color}}
+			</li>
+		</ul>
+
+		<ul>
+			<!-- <li v-for="item in classmate" v-on:click="DD101(item.name)"> -->
+			<li v-for="item in classmate" @click="DD101(item.name)">
+				NAME: {{item.name}}  AGE:{{item.age}}
+			</li>
+		</ul>
+	</div>
+<!--
+	for(color in colors){
+		use colors[color]
+	}
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script>
+		new Vue({
+			el: '#app',
+			data: {			//宣告變數
+				message: 'Hello, Vue!',
+				colors: ['red','orange','yellow','green','blue','indigo','violet'],
+				classmate: [{name:'Anan',age:14},{name:'Steve',age:18},{name:'Nina',age:15}],
+			},
+			methods: {		//function在此註冊
+				DD101: function(member){
+					alert(`DD101 members: ${member}`);
+				},
+				temp(){},
+			},
+		});
+	</script>
+</body>
+</html>
